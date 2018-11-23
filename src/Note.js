@@ -8,6 +8,8 @@ class Note extends Component {
     }
     this.edit = this.edit.bind(this)
     this.remove = this.remove.bind(this)
+    this.renderForm = this.renderForm.bind(this)
+    this.renderDisplay = this.renderDisplay.bind(this)
   }
   edit() {
     this.setState({
@@ -29,7 +31,7 @@ class Note extends Component {
     )
   }
 
-  render() {
+  renderDisplay() {
     return (
       <div className="note">
         <p>this is a test note</p>
@@ -39,6 +41,13 @@ class Note extends Component {
         </span>
       </div>
     )
+  }
+  render() {
+    if(this.state.editing) {
+      return this.renderForm()
+    } else {
+      return this.renderDisplay()
+    }
   }
 }
 
