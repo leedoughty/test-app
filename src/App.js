@@ -20,9 +20,28 @@ class App extends Component {
         }
       ]
     }
+    this.add = this.add.bind(this)
     this.eachNote = this.eachNote.bind(this)
     this.update = this.update.bind(this)
     this.remove = this.remove.bind(this)
+    this.nextId = this.nextId.bind(this)
+  }
+
+  add(text) {
+    this.setState(prevState => ({
+      notes: [
+        ...prevState.notes,
+        {
+          id: this.nextId(),
+          note: text
+        }
+      ]
+    }))
+  }
+
+  nextId() {
+    this.uniqueId = this.uniqueId || 0
+    return this.uniqueId++
   }
 
   update(newText, i) {
