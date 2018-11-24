@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Note from './Note'
+import { FaPlus } from 'react-icons/fa'
 
 class App extends Component {
   constructor(props) {
@@ -62,7 +63,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.notes.map(this.eachNote)}
-        <button onClick={this.add.bind(null, "New Note")} id="add">Add</button>
+        <button onClick={this.add.bind(null, "New Note")} id="add"><FaPlus /></button>
       </div>
     )
   }
