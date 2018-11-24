@@ -5,20 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      notes: [
-        {
-          id: 0,
-          note: 'this is the first note'
-        },
-        {
-          id: 1,
-          note: 'this is the second note'
-        },
-        {
-          id: 2,
-          note: 'this is the third note'
-        }
-      ]
+      notes: []
     }
     this.add = this.add.bind(this)
     this.eachNote = this.eachNote.bind(this)
@@ -75,6 +62,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.notes.map(this.eachNote)}
+        <button onClick={this.add.bind(null, "New Note")} id="add">Add</button>
       </div>
     )
   }
