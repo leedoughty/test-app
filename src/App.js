@@ -7,22 +7,37 @@ class App extends Component {
     this.state = {
       notes: [
         {
-          id: 1,
+          id: 0,
           note: 'this is the first note'
         },
         {
-          id: 2,
+          id: 1,
           note: 'this is the second note'
+        },
+        {
+          id: 2,
+          note: 'this is the third note'
         }
       ]
     }
     this.eachNote = this.eachNote.bind(this)
+    this.update = this.update.bind(this)
+  }
+
+  update(newText, i) {
+    console.log('Updating item at index', i, newText)
+    this.setState(prevState => ({
+      notes: prevState.notes.map(
+        note => (note.id !== i) ? note : {...note, note: newText}
+      )
+    }))
   }
 
   eachNote(note, i) {
     return (
       <Note key={i}
-            index={i}>
+            index={i}
+            onChange={this.update}>
             {note.note}
       </Note>
     )
