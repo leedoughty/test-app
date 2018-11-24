@@ -14,7 +14,7 @@ div.note {
   width: 150px;
   background-color: #f1c40f;
   margin: 2px 0;
-  position: relative;
+  position: absolute;
   overflow: hidden;
 }
 
