@@ -25,6 +25,21 @@ class Note extends Component {
     return x + Math.ceil(Math.random() * (y - x)) + s
   }
 
+  componentDidUpdate() {
+    let textArea
+    if(this.state.editing) {
+      textArea = this.newText
+      textArea.focus()
+      textArea.select()
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      this.props.children !== nextProps.children || this.state !== nextState
+    )
+  }
+
   edit() {
     this.setState({
       editing: true
@@ -47,7 +62,8 @@ class Note extends Component {
     return (
       <div className="note" styled={this.style}>
         <form onSubmit={this.save}>
-          <textarea ref={input => this.newText = input}/>
+          <textarea ref={input => this.newText = input}
+                    defaultValue={this.props.children}/>
           <button onClick={this.save}>Save</button>
         </form>
       </div>
