@@ -12,6 +12,7 @@ class Note extends Component {
     this.renderForm = this.renderForm.bind(this)
     this.renderDisplay = this.renderDisplay.bind(this)
   }
+
   edit() {
     this.setState({
       editing: true
@@ -21,14 +22,14 @@ class Note extends Component {
     alert('removing note')
   }
   save() {
-    alert('saved!')
+    alert(this.newText.value)
   }
 
   renderForm() {
     return (
       <div className="note">
         <form>
-          <textarea />
+          <textarea ref={input => this.newText = input}/>
           <button onClick={this.save}>Save</button>
         </form>
       </div>
@@ -46,6 +47,7 @@ class Note extends Component {
       </div>
     )
   }
+
   render() {
     return this.state.editing ? this.renderForm() : this.renderDisplay()
   }
