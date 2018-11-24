@@ -6,9 +6,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #e67e22;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+div.note {
+  height: 150px;
+  width: 150px;
+  background-color: #f1c40f;
+  margin: 2px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+div.note p {
+  margin: 0;
+  font-size: 22px;
+  padding: 5px;
+  font-family: Helvetica;
+}
+
+div.note:hover > span {
+  opacity: 1;
+}
+
+div.note > span {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity .25s linear;
+}
+
+div.note button {
+  margin: 2px;
 }
