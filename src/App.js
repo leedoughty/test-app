@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import Note from './Note'
 import { FaPlus } from 'react-icons/fa'
