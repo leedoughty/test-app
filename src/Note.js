@@ -62,7 +62,7 @@ class Note extends Component {
 
   renderForm() {
     return (
-      <div className="note" styled={this.style}>
+      <div className="note" style={this.style}>
         <form onSubmit={this.save}>
           <textarea ref={input => this.newText = input}
                     defaultValue={this.props.children}/>
