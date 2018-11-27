@@ -62,6 +62,7 @@ class Note extends Component {
 
   renderForm() {
     return (
+      <Draggable>
       <div className="note" style={this.style}>
         <form onSubmit={this.save}>
           <textarea ref={input => this.newText = input}
@@ -69,6 +70,7 @@ class Note extends Component {
           <button onClick={this.save}>Save</button>
         </form>
       </div>
+      </Draggable>
     )
   }
 
