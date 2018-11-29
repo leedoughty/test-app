@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Draggable from 'react-draggable'
 import { FaPen, FaCheck } from 'react-icons/fa'
 
+import Eyes from './Eyes.js'
+
 class Note extends Component {
   constructor(props) {
     super(props)
@@ -83,6 +85,7 @@ class Note extends Component {
           <button onClick={this.edit} id="edit"><FaPen /></button>
           <button onClick={this.remove} id="remove"><FaCheck /></button>
         </span>
+        <Eyes></Eyes>
       </div>
       </Draggable>
     )
