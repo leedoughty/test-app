@@ -41,3 +41,10 @@ div.note > span {
 div.note button {
   margin: 2px;
 }
+
+button {
+  border: none;
+  background: rgb(245, 245, 245);
+  margin-left: 50px;
+  outline: none;
+}

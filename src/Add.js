@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Plus = styled.div`
-  font-size: 10px;
+  font-size: 30px;
   color: black;
+  &:hover {
+    color: #f1c40f; 
+  }
 `
 
 class Add extends Component {
