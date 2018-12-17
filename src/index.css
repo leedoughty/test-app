@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #e67e22;
+  /* background: #e67e22; */
+  background: rgb(245, 245, 245);
 }
 
 div.note {
